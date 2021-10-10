@@ -1,7 +1,78 @@
 .conteiner-modal-modos-jogo {
-    background-color: #9FBCD0;
-    position: absolute;
-    top: 0px;
     width: 100vw;
     height: 100vh;
+    font-family: 'Mali', cursive;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #9fbcd098;
+    position: absolute;
+    top: 0px;
+    gap: 150px;
+}
+
+.conteiner-modo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 30%;
+    height: 70%;
+    gap: 20px;
+    border-radius: 20px;
+    border: 2px solid #EFF24C;
+}
+
+.conteiner-modo img {
+    width: 35%;
+    height: 30%;
+}
+
+.conteiner-modo h1 {
+    font-size: clamp(.1em, 1em + 2vw, 4em);
+    color: #0085DE;
+}
+
+.conteiner-modo p {
+    width: 80%;
+    font-size: clamp(.1em, 1em + .5vw, 1.2em);
+    text-align: center;
+    color: #8B8B88;
+}
+
+.conteiner-modo button {
+    width: 50%;
+    height: 12%;
+    border-radius: 10px;
+    background-color: #097AAA;
+    border: 0;
+    font-family: 'Mali', cursive;
+    font-weight: 600;
+    font-size: clamp(.1em, 1em + 1vw, 2em);
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.1);
+    transition: 0.7s;
+}
+
+@media (max-width: 768px) {
+    .conteiner-modal-modos-jogo{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .conteiner-modo {
+        width: 60%;
+        height: 40%;
+        gap: 10px;
+    }
+    img {
+        width: 20%;
+        height: 20%;
+    }
 }

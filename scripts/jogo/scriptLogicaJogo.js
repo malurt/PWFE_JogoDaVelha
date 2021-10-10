@@ -5,6 +5,9 @@ var jogador = 1
 
 
 //FUNCOES
+
+    //esconder modal de modos de jogo
+    const esconderModal = () => document.getElementById("conteiner-modal-modos-jogo").style.display = "none"
     
     //pegar elemento pelo ID
         const pegarElementoPeloId = (idElemento) => document.getElementById(idElemento)
