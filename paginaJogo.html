@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mali:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script src="scripts/jogo/scriptLogicaJogo.js" defer></script>
+
+
+
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/jogo/stylePaginaJogo.css">
+    <link rel="stylesheet" href="styles/jogo/menu-hamburguer.css">
+
+    <title>Partida - Jogo da Velha</title>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- <svg class="onda-header" viewBox="0 0 1440 145" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M0 145L24 124.286C48 103.571 96 62.1429 144 55.2165C192 48.5491 240 75.7366 288 75.9308C336 75.7366 384 48.5491 432 48.3549C480 48.5491 528 75.7366 576 89.7835C624 103.571 672 103.571 720 93.2143C768 82.8571 816 62.1429 864 48.3549C912 34.308 960 27.8348 1008 37.9978C1056 48.5491 1104 75.7366 1152 82.8571C1200 89.9777 1248 75.7366 1296 79.4263C1344 82.8571 1392 103.571 1416 113.929L1440 124.286V0H1416C1392 0 1344 0 1296 0C1248 0 1200 0 1152 0C1104 0 1056 0 1008 0C960 0 912 0 864 0C816 0 768 0 720 0C672 0 624 0 576 0C528 0 480 0 432 0C384 0 336 0 288 0C240 0 192 0 144 0C96 0 48 0 24 0H0V145Z"
+                fill="#0085DE" />
+        </svg> -->
+    </header>
+
+    <main>
+        <div class="conteiner-botoes-acao">
+
+            <div class="conteiner-menu">
+                <input id="menu-hamburguer" type="checkbox" />
+                <label for="menu-hamburguer">
+                    <div class="menu">
+                        <span class="hamburguer"></span>
+                    </div>
+                </label>
+                <div class="conteiner-iten-menu">
+                    <ul>
+                        <li>
+                            <a class="link-menu" href="index.html" target="blank">
+                                <span class="material-icons-outlined">
+                                    home
+                                </span>
+                                <p>Home</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="link-menu" href="infos.html" target="blank">
+                                <span class="material-icons-outlined">
+                                    lightbulb
+                                </span>
+                                <p>Estratégias</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="link-menu" href="infos.html" target="blank" >
+                                <span class="material-icons-outlined">
+                                    menu_book
+                                </span>
+                                <p>História do jogo</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="link-menu" href="infos.html" target="blank">
+                                <span class="material-icons-outlined">
+                                    info
+                                </span>
+                                <p>Sobre nós</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="conteiner-controle-jogo">
+
+                <span class="material-icons-outlined icone reiniciar" id="botao-reiniciar">
+                    refresh
+                </span>
+
+                <a href="index.html">
+                    <span class="material-icons-outlined icone sair">
+                    logout
+                </span>
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="conteiner-componentes-jogo">
+            <div class="conteiner-jogador 1">
+
+                <img class="icone-usuario icone-usuario1" src="src/imgs/user-figma.png" alt="Icone do usuário 1">
+                <p class="nome-usuario destacado" id="nome-usuario1">Player 1</p>
+
+            </div>
+
+            <div class="conteiner-campo-jogo">
+
+                <div class="conteiner-hash">
+                    <div class="campo-hash campo-A white" id="campo-A">
+                        <!-- A -->
+                    </div>
+                    <div class="campo-hash campo-B white" id="campo-B">
+                        <!-- B -->
+                    </div>
+                    <div class="campo-hash campo-C white" id="campo-C">
+                        <!-- C -->
+                    </div>
+                    <div class="campo-hash campo-D white" id="campo-D">
+                        <!-- D -->
+                    </div>
+                    <div class="campo-hash campo-E white" id="campo-E">
+                        <!-- E -->
+                    </div>
+                    <div class="campo-hash campo-F white" id="campo-F">
+                        <!-- F -->
+                    </div>
+                    <div class="campo-hash campo-G white" id="campo-G">
+                        <!-- G -->
+                    </div>
+                    <div class="campo-hash campo-H white" id="campo-H">
+                        <!-- H -->
+                    </div>
+                    <div class="campo-hash campo-I white" id="campo-I">
+                        <!-- I -->
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="conteiner-jogador 2">
+                <img class="icone-usuario icone-usuario2" src="src/imgs/user-figma.png" alt="Icone do usuário 1">
+                <p class="nome-usuario" id="nome-usuario2">Player 2</p>
+            </div>
+        </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <!-- <svg  class="onda-footer" viewBox="0 0 1140 145" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path 
+                d="M0 62.3768L24 50.8357C48 39.2946 96 16.2125 144 12.3534C192 8.63863 240 23.7863 288 23.8945C336 23.7863 384 8.63863 432 8.53044C480 8.63863 528 23.7863 576 31.6126C624 39.2946 672 39.2946 720 33.5241C768 27.7535 816 16.2125 864 8.53044C912 0.704143 960 -2.90244 1008 2.7599C1056 8.63863 1104 23.7863 1152 27.7535C1200 31.7208 1248 23.7863 1296 25.842C1344 27.7535 1392 39.2946 1416 45.0652L1440 50.8357V97H1416C1392 97 1344 97 1296 97C1248 97 1200 97 1152 97C1104 97 1056 97 1008 97C960 97 912 97 864 97C816 97 768 97 720 97C672 97 624 97 576 97C528 97 480 97 432 97C384 97 336 97 288 97C240 97 192 97 144 97C96 97 48 97 24 97H0V62.3768Z"
+                fill="#0085DE" />
+        </svg> -->
+
+    </footer>
+
+
+</body>
+
+
+</html>
