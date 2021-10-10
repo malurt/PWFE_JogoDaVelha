@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    height: 15%;
+}
+
+header img {
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    gap: 10%;
+}
+
+h1 {
+    font-family: 'Mali', cursive;
+    font-style: normal;
+    font-weight: 500;
+    font-size: clamp(4em, 1em + 5vw, 6em);
+    color: #545451;
+    max-width: 50%;
+    text-align: center;
+}
+
+.centro {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+.centro img {
+    width: 150px;
+    height: 150px;
+}
+
+.velha {
+    margin-top: 100px;
+}
+
+.hash {
+    margin-top: -50px;
+}
+
+.button {
+    width: 20%;
+    height: 15%;
+}
+
+button {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #097AAA;
+    border: 0;
+    font-family: 'Mali', cursive;
+    font-weight: 600;
+    font-size: clamp(.2em, 1em + 1vw, 2em);
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.1);
+    transition: 0.7s;
+}
+
+footer {
+    height: 15%;
+}
+
+footer img {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .centro img {
+        width: 100px;
+        height: 100px;
+    }
+}
