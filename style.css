@@ -52,7 +52,7 @@ h1 {
 }
 
 .velha {
-    margin-top: 100px;
+    margin-top: 120px;
 }
 
 .hash {
@@ -72,7 +72,7 @@ button {
     border: 0;
     font-family: 'Mali', cursive;
     font-weight: 600;
-    font-size: clamp(.2em, 1em + 1vw, 2em);
+    font-size: clamp(.2em, 1em + 2vw, 2em);
     text-decoration: none;
     text-align: center;
     color: white;
@@ -96,5 +96,8 @@ footer img {
     .centro img {
         width: 100px;
         height: 100px;
+    }
+    .velha {
+        margin-left: 20px;
     }
 }
