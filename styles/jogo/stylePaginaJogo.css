@@ -20,9 +20,10 @@ header
 {
     /* background-color: powderblue; */
     width: 100%;
-    height: 120px; /* 150px */
+    height: 150px; /* 150px */
 
-    background-image: url(../../src/imgs/onda-header.png);
+    /* background-image: url(../../src/imgs/onda-header.png); */
+    background-image: url(../../src/imgs/ondas/jogo/onda-header.png);
     background-size:cover;
     background-position: center top; 
 }
@@ -211,7 +212,7 @@ footer
     width: 100%;
     height: 75px; /* 75px */
 
-    background-image: url(../../src/imgs/onda-footer.png);
+    background-image: url(../../src/imgs/ondas/jogo/onda-footer.png);
     background-size:cover;
     background-position: center top; 
 }
@@ -284,7 +285,7 @@ footer
 
     header
     {
-        height: 100px;
+        height: 90px;
     }
 
     footer
