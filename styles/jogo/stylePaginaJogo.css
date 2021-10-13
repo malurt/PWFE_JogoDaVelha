@@ -216,6 +216,26 @@ footer
     background-position: center top; 
 }
 
+.x, .o {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.x span {
+    font-size: clamp(5em, 2em + 6vw, 7em);
+    color: #EFF24C;
+}
+
+.o span {
+    font-size: clamp(5em, 2em + 6vw, 7em);
+    color: #3F4CBE;
+}
+
+
+
+
+
 @media (max-width: 1326px)
 {
 

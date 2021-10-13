@@ -18,7 +18,7 @@ var jogador = 1
             const nomeJogador1 =  document.getElementById("nome-usuario1")
             const nomeJogador2 =  document.getElementById("nome-usuario2")
             
-            if(jogador ==1)
+            if(jogador == 1)
             {
                nomeJogador1.classList.add("destacado")
 
@@ -57,8 +57,12 @@ var jogador = 1
             {
                 if(campo.classList.contains("white"))
                 {
-                    campo.style.backgroundColor = 'blue';
-                    adicionaClasses(campo, "blue")
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `close` // ícone x
+                    novaImg.src = "../src/imgs/x"
+                    novaImg.classList.add("material-icons-outlined")
+                    campo.appendChild(novaImg)
+                    adicionaClasses(campo, "x")
                     jogador =2 //inverte a cor que aparecerá no campo de jogo
                     destacaJogador()
                     verificarVitoria()
@@ -73,7 +77,6 @@ var jogador = 1
             {
                 if(campo.classList.contains("white"))
                 {
-                    campo.style.backgroundColor = 'red';
                     adicionaClasses(campo, "red")
                     jogador =1 //inverte a cor que aparecerá no campo de jogo
                     destacaJogador()
