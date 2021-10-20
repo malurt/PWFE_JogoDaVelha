@@ -270,11 +270,19 @@ var jogador = 1
         }
 
     // adiciona classes às divs identificando a cor/jogador que a escolheu
-    const removeClasse = (elemento, classe) =>
-    {
-        elemento.classList.remove(classe)
-        elemento.classList.add("white")
-    }
+        const removeClasse = (elemento, classe) =>
+        {
+            elemento.classList.remove(classe)
+            elemento.classList.add("white")
+        }
+
+    //Anuncia vencedor
+        //necessita de finalização
+        const anunciaVencedor = () => true
+    
+    //Mostra avisos para jogador (selecionar campo vazio)
+        //necessita de finalização
+        const avisarJogadores = () => true
 
 
 //EVENTOS 
