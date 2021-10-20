@@ -7,7 +7,7 @@ var jogador = 1
 //FUNCOES
 
     //esconder modal de modos de jogo
-    const esconderModal = () => document.getElementById("conteiner-modal-modos-jogo").style.display = "none"
+        const esconderModal = () => document.getElementById("conteiner-modal-modos-jogo").style.display = "none"
     
     //pegar elemento pelo ID
         const pegarElementoPeloId = (idElemento) => document.getElementById(idElemento)
@@ -59,11 +59,11 @@ var jogador = 1
                 {
                     const novaImg = document.createElement("span")
                     novaImg.innerHTML = `close` // ícone x
-                    novaImg.src = "../src/imgs/x"
+                    // novaImg.src = "../src/imgs/x"
                     novaImg.classList.add("material-icons-outlined")
                     campo.appendChild(novaImg)
                     adicionaClasses(campo, "x")
-                    jogador =2 //inverte a cor que aparecerá no campo de jogo
+                    jogador = 2 //inverte a cor que aparecerá no campo de jogo
                     destacaJogador()
                     verificarVitoria()
                 }
@@ -77,8 +77,13 @@ var jogador = 1
             {
                 if(campo.classList.contains("white"))
                 {
-                    adicionaClasses(campo, "red")
-                    jogador =1 //inverte a cor que aparecerá no campo de jogo
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    // novaImg.src = "../src/imgs/o"
+                    novaImg.classList.add("material-icons-outlined")
+                    campo.appendChild(novaImg)
+                    adicionaClasses(campo, "o")
+                    jogador = 1 //inverte a cor que aparecerá no campo de jogo
                     destacaJogador()
                     verificarVitoria()
                 }
@@ -107,112 +112,112 @@ var jogador = 1
         const verificarVitoria = () =>
         {
             //primeira coluna da esquerda pra direita AZUL -> vitoria do jogador 1
-            if (campoA.classList.contains("blue") && campoD.classList.contains("blue") && campoG.classList.contains("blue"))
+            if (campoA.classList.contains("x") && campoD.classList.contains("x") && campoG.classList.contains("x"))
             {
                 alert("jogador 1 venceu!!!")
                 jogador = 0
             }
 
             //primeira coluna da esquerda pra direita VEMELHA -> vitoria do jogador 2
-            else if (campoA.classList.contains("red") && campoD.classList.contains("red") && campoG.classList.contains("red") )
+            else if (campoA.classList.contains("o") && campoD.classList.contains("o") && campoG.classList.contains("o") )
             {
                 alert("jogador 2 venceu!!!")
                 jogador = 0
             }
 
             //segunda coluna da esquerda pra direita (meio) AZUL - > vitoria jogador 1
-            else if(campoB.classList.contains("blue") && campoE.classList.contains("blue") && campoH.classList.contains("blue"))
+            else if(campoB.classList.contains("x") && campoE.classList.contains("x") && campoH.classList.contains("x"))
             {
                 alert("jogador 1 venceu!!!")
                 jogador = 0
             }
             
             //segunda coluna da esquerda pra direita (meio) VERMELHA - > vitoria jogador 2
-            else if(campoB.classList.contains("red") && campoE.classList.contains("red") && campoH.classList.contains("red"))
+            else if(campoB.classList.contains("o") && campoE.classList.contains("o") && campoH.classList.contains("o"))
             {
                 alert("jogador 2 venceu!!!")
                 jogador = 0
             }
 
             //terceira coluna da esquerda pra direita AZUL - > vitoria jogador 1
-            else if(campoC.classList.contains("blue") && campoF.classList.contains("blue") && campoI.classList.contains("blue"))
+            else if(campoC.classList.contains("x") && campoF.classList.contains("x") && campoI.classList.contains("x"))
             {
                 alert("jogador 1 venceu!!!")
                 jogador = 0
             }
 
             //terceira coluna da esquerda pra direita VERMELHO - > vitoria jogador 2
-            else if(campoC.classList.contains("red") && campoF.classList.contains("red") && campoI.classList.contains("red"))
+            else if(campoC.classList.contains("o") && campoF.classList.contains("o") && campoI.classList.contains("o"))
             {
                 alert("jogador 2 venceu!!!")
                 jogador = 0
             }
 
             //primeira linha de cima para baixo AZUL - > vitoria jogador 1
-            else if(campoA.classList.contains("blue") && campoB.classList.contains("blue") && campoC.classList.contains("blue"))
+            else if(campoA.classList.contains("x") && campoB.classList.contains("x") && campoC.classList.contains("x"))
             {
                 alert("jogador 1 venceu!!!")
                 jogador = 0
             }
 
             //primeira linha de cima para baixo VERMELHA - > vitoria jogador 2
-            else if(campoA.classList.contains("red") && campoB.classList.contains("red") && campoC.classList.contains("red"))
+            else if(campoA.classList.contains("o") && campoB.classList.contains("o") && campoC.classList.contains("o"))
             {
                 alert("jogador 2 venceu!!!")
                 jogador = 0
             }
 
             //segunda linha de cima para baixo AZUL - > vitoria jogador 1
-            else if(campoD.classList.contains("blue") && campoE.classList.contains("blue") && campoF.classList.contains("blue"))
+            else if(campoD.classList.contains("x") && campoE.classList.contains("x") && campoF.classList.contains("x"))
             {
                 alert("jogador 1 venceu!!!")
                 jogador = 0
             }
 
             //segunda linha de cima para baixo VERMELHA - > vitoria jogador 2
-            else if(campoD.classList.contains("red") && campoE.classList.contains("red") && campoF.classList.contains("red"))
+            else if(campoD.classList.contains("o") && campoE.classList.contains("o") && campoF.classList.contains("o"))
             {
                 alert("jogador 2 venceu!!!")
                 jogador = 0
             }
 
             //terceira linha de cima para baixo AZUL - > vitoria jogador 1
-            else if(campoG.classList.contains("blue") && campoH.classList.contains("blue") && campoI.classList.contains("blue"))
+            else if(campoG.classList.contains("x") && campoH.classList.contains("x") && campoI.classList.contains("x"))
             {
                 alert("jogador 1 venceu!!!")
                 jogador = 0
             }
 
             //terceira linha de cima para baixo VERMELHA - > vitoria jogador 2
-            else if(campoG.classList.contains("red") && campoH.classList.contains("red") && campoI.classList.contains("red"))
+            else if(campoG.classList.contains("o") && campoH.classList.contains("o") && campoI.classList.contains("o"))
             {
                 alert("jogador 2 venceu!!!")
                 jogador = 0
             }
 
             //diagonal esquerda pra direita AZUL - > vitoria jogador 1
-            else if(campoA.classList.contains("blue") && campoE.classList.contains("blue") && campoI.classList.contains("blue"))
+            else if(campoA.classList.contains("x") && campoE.classList.contains("x") && campoI.classList.contains("x"))
             {
                 alert("jogador 1 venceu!!!")
                 jogador = 0
             }
             
             //diagonal esquerda pra direita VEMELHO - > vitoria jogador 2
-            else if(campoA.classList.contains("red") && campoE.classList.contains("red") && campoI.classList.contains("red"))
+            else if(campoA.classList.contains("o") && campoE.classList.contains("o") && campoI.classList.contains("o"))
             {
                 alert("jogador 2 venceu!!!")
                 jogador = 0
             }
 
             //diagonal direita pra esquerda AZUL - > vitoria jogador 1
-            else if(campoC.classList.contains("blue") && campoE.classList.contains("blue") && campoG.classList.contains("blue"))
+            else if(campoC.classList.contains("x") && campoE.classList.contains("x") && campoG.classList.contains("x"))
             {
                 alert("jogador 1 venceu!!!")
                 jogador = 0
             }
 
             //diagonal direita pra esquerda VERMELHA - > vitoria jogador 1
-            else if(campoC.classList.contains("red") && campoE.classList.contains("red") && campoG.classList.contains("red"))
+            else if(campoC.classList.contains("o") && campoE.classList.contains("o") && campoG.classList.contains("o"))
             {
                 alert("jogador 2 venceu!!!")
                 jogador = 0
@@ -239,18 +244,24 @@ var jogador = 1
         const reiniciarJogo = () =>
         {
            const campos = document.getElementsByClassName("campo-hash")
-           const arrCampos = Array.from(campos)
+           console.log(campos)
 
+           const arrCampos = Array.from(campos)
            arrCampos.forEach(campo => 
             {
-                campo.style.backgroundColor = "white"
-               if (campo.classList.contains("blue"))
+                while(campo.firstChild)
+                {
+                    campo.removeChild(campo.firstChild)
+                }
+                
+               if (campo.classList.contains("x"))
                {
-                    removeClasse(campo, "blue")
+                    removeClasse(campo, "x")
+                    
                }
-               else if (campo.classList.contains("red"))
+               else if (campo.classList.contains("o"))
                {
-                    removeClasse(campo, "red")
+                    removeClasse(campo, "o")
                }
             })
 
