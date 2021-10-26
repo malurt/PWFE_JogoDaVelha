@@ -1,7 +1,11 @@
 "use strict"
 
-//VARIAVEL DA VEZ
+//VARIAVEL DA VEZ, DO TIPO E DO NIVEL DE DIFICULDADE
 var jogador = 1
+
+var tipoJogo = "maquina"
+
+var nivelDificuldade = "facil"
 
 
 //FUNCOES
@@ -63,7 +67,8 @@ var jogador = 1
                     novaImg.classList.add("material-icons-outlined")
                     campo.appendChild(novaImg)
                     adicionaClasses(campo, "x")
-                    jogador = 2 //inverte a cor que aparecerá no campo de jogo
+                    //jogador = 2 //inverte a cor que aparecerá no campo de jogo
+                    definirProximoJogador()
                     destacaJogador()
                     verificarVitoria()
                 }
@@ -99,6 +104,70 @@ var jogador = 1
             }
         }
 
+        const fazerJogadaMaquina = () =>
+        {
+            var arrayCampos = ["campo-A", "campo-B", "campo-C", "campo-D", "campo-E", "campo-F", "campo-G", 
+            "campo-H", "campo-I"]
+
+            if(nivelDificuldade == "facil")
+            {        
+                
+                var encontrou = false
+
+                while(!encontrou)
+                {
+                    const idAleatorio = arrayCampos[Math.floor(Math.random() * arrayCampos.length)]
+                    var campoEscolhido = document.getElementById(idAleatorio)
+
+                    console.log(idAleatorio)
+
+                    if(campoEscolhido.classList.contains("white"))
+                    {
+                        const novaImg = document.createElement("span")
+                        novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                        // novaImg.src = "../src/imgs/o"
+                        novaImg.classList.add("material-icons-outlined")
+                        campoEscolhido.appendChild(novaImg)
+                        adicionaClasses(campoEscolhido, "o")
+                        jogador = 1 //inverte a cor que aparecerá no campo de jogo
+                        destacaJogador()
+                        verificarVitoria()
+                        
+                        console.log("encontrou campo vazio. bolinha vai aparecer")
+                        encontrou = true
+                    
+                    }
+                    else
+                    {
+                        verificarVitoria()
+                        console.log("não encontrou campo vazio. bolinha não vai aparecer")
+                        
+                    }
+                }
+                
+            }
+            // else if (medio)
+            // {
+
+            // }
+            // else if (dificil)
+            // {
+
+            // }
+        }
+
+        const definirProximoJogador = () =>
+        {
+            if(tipoJogo == "maquina")
+            {
+                fazerJogadaMaquina();
+                jogador = 1;
+            }
+            else
+            {
+                jogador = 2;
+            }
+        }
 
     // adiciona classes às divs identificando a cor/jogador que a escolheu
         const adicionaClasses = (elemento, classe) =>
