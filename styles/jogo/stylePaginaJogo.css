@@ -163,6 +163,11 @@ ul
     gap: 40px;
 }
 
+.maquina
+{
+    display: none;
+}
+
 .conteiner-jogador img
 {
     width: 40%;

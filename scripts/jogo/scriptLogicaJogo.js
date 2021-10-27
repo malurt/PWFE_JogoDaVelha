@@ -3,7 +3,7 @@
 //VARIAVEL DA VEZ, DO TIPO E DO NIVEL DE DIFICULDADE
 var jogador = 1
 
-var tipoJogo = "maquina"
+var tipoJogo = ""
 
 var nivelDificuldade = "facil"
 
@@ -68,9 +68,13 @@ var nivelDificuldade = "facil"
                     campo.appendChild(novaImg)
                     adicionaClasses(campo, "x")
                     //jogador = 2 //inverte a cor que aparecerá no campo de jogo
-                    definirProximoJogador()
-                    destacaJogador()
-                    verificarVitoria()
+                    // verificarVitoria()
+                    if(!verificarVitoria())
+                    {
+                        definirProximoJogador()
+                        destacaJogador()
+                    }
+                    
                 }
                 else
                 {
@@ -156,11 +160,14 @@ var nivelDificuldade = "facil"
             // }
         }
 
+        
+        
+
         const definirProximoJogador = () =>
         {
-            if(tipoJogo == "maquina")
+            if(tipoJogo == "player-maquina")
             {
-                fazerJogadaMaquina();
+                setTimeout(fazerJogadaMaquina,1000)
                 jogador = 1;
             }
             else
@@ -185,6 +192,7 @@ var nivelDificuldade = "facil"
             {
                 alert("jogador 1 venceu!!!")
                 jogador = 0
+                return true
             }
 
             //primeira coluna da esquerda pra direita VEMELHA -> vitoria do jogador 2
@@ -192,6 +200,7 @@ var nivelDificuldade = "facil"
             {
                 alert("jogador 2 venceu!!!")
                 jogador = 0
+                return true
             }
 
             //segunda coluna da esquerda pra direita (meio) AZUL - > vitoria jogador 1
@@ -199,6 +208,7 @@ var nivelDificuldade = "facil"
             {
                 alert("jogador 1 venceu!!!")
                 jogador = 0
+                return true
             }
             
             //segunda coluna da esquerda pra direita (meio) VERMELHA - > vitoria jogador 2
@@ -206,6 +216,7 @@ var nivelDificuldade = "facil"
             {
                 alert("jogador 2 venceu!!!")
                 jogador = 0
+                return true
             }
 
             //terceira coluna da esquerda pra direita AZUL - > vitoria jogador 1
@@ -213,6 +224,7 @@ var nivelDificuldade = "facil"
             {
                 alert("jogador 1 venceu!!!")
                 jogador = 0
+                return true
             }
 
             //terceira coluna da esquerda pra direita VERMELHO - > vitoria jogador 2
@@ -220,6 +232,7 @@ var nivelDificuldade = "facil"
             {
                 alert("jogador 2 venceu!!!")
                 jogador = 0
+                return true
             }
 
             //primeira linha de cima para baixo AZUL - > vitoria jogador 1
@@ -227,6 +240,7 @@ var nivelDificuldade = "facil"
             {
                 alert("jogador 1 venceu!!!")
                 jogador = 0
+                return true
             }
 
             //primeira linha de cima para baixo VERMELHA - > vitoria jogador 2
@@ -234,6 +248,7 @@ var nivelDificuldade = "facil"
             {
                 alert("jogador 2 venceu!!!")
                 jogador = 0
+                return true
             }
 
             //segunda linha de cima para baixo AZUL - > vitoria jogador 1
@@ -241,6 +256,7 @@ var nivelDificuldade = "facil"
             {
                 alert("jogador 1 venceu!!!")
                 jogador = 0
+                return true
             }
 
             //segunda linha de cima para baixo VERMELHA - > vitoria jogador 2
@@ -248,6 +264,7 @@ var nivelDificuldade = "facil"
             {
                 alert("jogador 2 venceu!!!")
                 jogador = 0
+                return true
             }
 
             //terceira linha de cima para baixo AZUL - > vitoria jogador 1
@@ -255,6 +272,7 @@ var nivelDificuldade = "facil"
             {
                 alert("jogador 1 venceu!!!")
                 jogador = 0
+                return true
             }
 
             //terceira linha de cima para baixo VERMELHA - > vitoria jogador 2
@@ -262,6 +280,7 @@ var nivelDificuldade = "facil"
             {
                 alert("jogador 2 venceu!!!")
                 jogador = 0
+                return true
             }
 
             //diagonal esquerda pra direita AZUL - > vitoria jogador 1
@@ -269,6 +288,7 @@ var nivelDificuldade = "facil"
             {
                 alert("jogador 1 venceu!!!")
                 jogador = 0
+                return true
             }
             
             //diagonal esquerda pra direita VEMELHO - > vitoria jogador 2
@@ -276,6 +296,7 @@ var nivelDificuldade = "facil"
             {
                 alert("jogador 2 venceu!!!")
                 jogador = 0
+                return true
             }
 
             //diagonal direita pra esquerda AZUL - > vitoria jogador 1
@@ -283,6 +304,7 @@ var nivelDificuldade = "facil"
             {
                 alert("jogador 1 venceu!!!")
                 jogador = 0
+                return true
             }
 
             //diagonal direita pra esquerda VERMELHA - > vitoria jogador 1
@@ -290,6 +312,8 @@ var nivelDificuldade = "facil"
             {
                 alert("jogador 2 venceu!!!")
                 jogador = 0
+                return true
+                return true
             }
 
             // se nenhum campo for branco, mas nenhuma vitória for declarada
@@ -306,7 +330,11 @@ var nivelDificuldade = "facil"
             {
                 alert("Deu Velha!")
                 jogador = 0
+                return true
             }
+
+            return false
+            
         }
     
     //reinicia o jogo limpando as divs e determinando o jogador como 1
@@ -336,6 +364,32 @@ var nivelDificuldade = "facil"
 
             jogador = 1
             destacaJogador()  
+        }
+
+        const definirTipoJogo = (modoJogo) =>
+        {
+            esconderModal()
+            if(modoJogo == "player-maquina")
+            {
+                mudarOponente()
+                tipoJogo = "player-maquina"
+            }
+            else
+            {
+                tipoJogo = "player-player"
+            }
+        }
+
+        const mudarOponente = () =>
+        {
+           const divJogador2 = pegarElementoPeloId("jogador2")
+           console.log(divJogador2);
+           divJogador2.style.display = "none"
+
+           const divJogadorMaquina = pegarElementoPeloId("maquina")
+           console.log(divJogadorMaquina)
+           divJogadorMaquina.classList.remove("maquina")
+           divJogadorMaquina.classList.add("conteiner-jogador")
         }
 
     // adiciona classes às divs identificando a cor/jogador que a escolheu
@@ -395,3 +449,11 @@ var nivelDificuldade = "facil"
     //Clique no reiniciar
         const botaoReiniciar = pegarElementoPeloId("botao-reiniciar")
         botaoReiniciar.addEventListener("click", reiniciarJogo)
+
+    //Clique no botão de jogar contra maquina
+        const botaoJogarContraMaquina = pegarElementoPeloId("botaoJogarMaquina")
+        botaoJogarContraMaquina.addEventListener("click", function(){definirTipoJogo("player-maquina")})
+        
+    //Clique no botão de jogar contra player
+        const botaoJogarContraPlayer = pegarElementoPeloId("botaoJogarPlayer")
+        botaoJogarContraPlayer.addEventListener("click", function(){definirTipoJogo("player-player")})
