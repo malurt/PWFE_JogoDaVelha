@@ -5,7 +5,7 @@ var jogador = 1
 
 var tipoJogo = ""
 
-var nivelDificuldade = "facil"
+var nivelDificuldade = "medio"
 
 
 //FUNCOES
@@ -108,53 +108,292 @@ var nivelDificuldade = "facil"
             }
         }
 
-        const fazerJogadaMaquina = () =>
+        const fazerJogadaAleatoria = () => 
         {
             var arrayCampos = ["campo-A", "campo-B", "campo-C", "campo-D", "campo-E", "campo-F", "campo-G", 
             "campo-H", "campo-I"]
 
-            if(nivelDificuldade == "facil")
-            {        
-                
-                var encontrou = false
+            var encontrou = false
 
-                while(!encontrou)
+            while(!encontrou)
+            {
+                const idAleatorio = arrayCampos[Math.floor(Math.random() * arrayCampos.length)]
+                var campoEscolhido = document.getElementById(idAleatorio)
+
+                console.log(idAleatorio)
+
+                if(campoEscolhido.classList.contains("white"))
                 {
-                    const idAleatorio = arrayCampos[Math.floor(Math.random() * arrayCampos.length)]
-                    var campoEscolhido = document.getElementById(idAleatorio)
-
-                    console.log(idAleatorio)
-
-                    if(campoEscolhido.classList.contains("white"))
-                    {
-                        const novaImg = document.createElement("span")
-                        novaImg.innerHTML = `radio_button_unchecked` // ícone o
-                        // novaImg.src = "../src/imgs/o"
-                        novaImg.classList.add("material-icons-outlined")
-                        campoEscolhido.appendChild(novaImg)
-                        adicionaClasses(campoEscolhido, "o")
-                        jogador = 1 //inverte a cor que aparecerá no campo de jogo
-                        destacaJogador()
-                        verificarVitoria()
-                        
-                        console.log("encontrou campo vazio. bolinha vai aparecer")
-                        encontrou = true
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoEscolhido.appendChild(novaImg)
+                    adicionaClasses(campoEscolhido, "o")
+                    jogador = 1 //inverte a cor que aparecerá no campo de jogo
+                    destacaJogador()
+                    verificarVitoria()
                     
-                    }
-                    else
-                    {
-                        verificarVitoria()
-                        console.log("não encontrou campo vazio. bolinha não vai aparecer")
-                        
-                    }
+                    console.log("encontrou campo vazio. bolinha vai aparecer")
+                    encontrou = true
+                
                 }
+                else
+                {
+                    verificarVitoria()
+                    console.log("não encontrou campo vazio. bolinha não vai aparecer")
+                }
+            }    
+        }
+
+        const fazerJogadaMaquina = () =>
+        {
+            // var arrayCampos = ["campo-A", "campo-B", "campo-C", "campo-D", "campo-E", "campo-F", "campo-G", 
+            // "campo-H", "campo-I"]
+
+            if(nivelDificuldade == "facil")
+            {  
+                fazerJogadaAleatoria()      
+                
+                // var encontrou = false
+
+                // while(!encontrou)
+                // {
+                //     const idAleatorio = arrayCampos[Math.floor(Math.random() * arrayCampos.length)]
+                //     var campoEscolhido = document.getElementById(idAleatorio)
+
+                //     console.log(idAleatorio)
+
+                //     if(campoEscolhido.classList.contains("white"))
+                //     {
+                //         const novaImg = document.createElement("span")
+                //         novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                //         novaImg.classList.add("material-icons-outlined")
+                //         campoEscolhido.appendChild(novaImg)
+                //         adicionaClasses(campoEscolhido, "o")
+                //         jogador = 1 //inverte a cor que aparecerá no campo de jogo
+                //         destacaJogador()
+                //         verificarVitoria()
+                        
+                //         console.log("encontrou campo vazio. bolinha vai aparecer")
+                //         encontrou = true
+                    
+                //     }
+                //     else
+                //     {
+                //         verificarVitoria()
+                //         console.log("não encontrou campo vazio. bolinha não vai aparecer")
+                        
+                //     }
+            // }
                 
             }
-            // else if (medio)
-            // {
+            else if (nivelDificuldade == "medio")
+            {
+                //Possibilidades horizontais
+                if (campoA.classList.contains("x") && campoB.classList.contains("x") && campoC.classList.contains("white")) 
+                {
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoC.appendChild(novaImg)
+                    adicionaClasses(campoC, "o")
+                }
+                else if (campoA.classList.contains("x") && campoC.classList.contains("x") && campoB.classList.contains("white")) 
+                {
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoB.appendChild(novaImg)
+                    adicionaClasses(campoB, "o")
+                } 
+                else if (campoB.classList.contains("x") && campoC.classList.contains("x") && campoA.classList.contains("white")) 
+                {
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoA.appendChild(novaImg)
+                    adicionaClasses(campoA, "o")
+                }
+                else if (campoD.classList.contains("x") && campoE.classList.contains("x") && campoF.classList.contains("white")) 
+                {
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoF.appendChild(novaImg)
+                    adicionaClasses(campoF, "o")
+                }
+                else if (campoD.classList.contains("x") && campoF.classList.contains("x") && campoE.classList.contains("white")) 
+                {
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoE.appendChild(novaImg)
+                    adicionaClasses(campoE, "o")
+                }
+                else if (campoE.classList.contains("x") && campoF.classList.contains("x") && campoD.classList.contains("white")) 
+                {
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoD.appendChild(novaImg)
+                    adicionaClasses(campoD, "o")
+                }
+                else if (campoG.classList.contains("x") && campoH.classList.contains("x") && campoI.classList.contains("white")) 
+                {
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoI.appendChild(novaImg)
+                    adicionaClasses(campoI, "o")
+                }
+                else if (campoG.classList.contains("x") && campoI.classList.contains("x") && campoH.classList.contains("white")) 
+                {
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoH.appendChild(novaImg)
+                    adicionaClasses(campoH, "o")
+                }
+                else if (campoH.classList.contains("x") && campoI.classList.contains("x") && campoG.classList.contains("white")) 
+                {
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoG.appendChild(novaImg)
+                    adicionaClasses(campoG, "o")
+                }
+                //Possibilidades verticais
+                else if (campoA.classList.contains("x") && campoD.classList.contains("x") && campoG.classList.contains("white")) 
+                {
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoG.appendChild(novaImg)
+                    adicionaClasses(campoG, "o")
+                }
+                else if (campoA.classList.contains("x") && campoG.classList.contains("x") && campoD.classList.contains("white")) 
+                {
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoD.appendChild(novaImg)
+                    adicionaClasses(campoD, "o")
+                }
+                else if (campoD.classList.contains("x") && campoG.classList.contains("x") && campoA.classList.contains("white")) 
+                {
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoA.appendChild(novaImg)
+                    adicionaClasses(campoA, "o")
+                }
+                else if (campoB.classList.contains("x") && campoE.classList.contains("x") && campoH.classList.contains("white")) 
+                {
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoH.appendChild(novaImg)
+                    adicionaClasses(campoH, "o")
+                }
+                else if (campoB.classList.contains("x") && campoH.classList.contains("x") && campoE.classList.contains("white")) 
+                {
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoE.appendChild(novaImg)
+                    adicionaClasses(campoE, "o")
+                }
+                else if (campoE.classList.contains("x") && campoH.classList.contains("x") && campoB.classList.contains("white")) 
+                {
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoB.appendChild(novaImg)
+                    adicionaClasses(campoB, "o")
+                }
+                else if (campoC.classList.contains("x") && campoF.classList.contains("x") && campoI.classList.contains("white")) 
+                {
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoI.appendChild(novaImg)
+                    adicionaClasses(campoI, "o")
+                }
+                else if (campoC.classList.contains("x") && campoI.classList.contains("x") && campoF.classList.contains("white")) 
+                {
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoF.appendChild(novaImg)
+                    adicionaClasses(campoF, "o")
+                }
+                else if (campoF.classList.contains("x") && campoI.classList.contains("x") && campoC.classList.contains("white")) 
+                {
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoC.appendChild(novaImg)
+                    adicionaClasses(campoC, "o")
+                }
+                //Possibilidades diagonais
+                else if (campoA.classList.contains("x") && campoE.classList.contains("x") && campoI.classList.contains("white")) 
+                {
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoI.appendChild(novaImg)
+                    adicionaClasses(campoI, "o")
+                }
+                else if (campoA.classList.contains("x") && campoI.classList.contains("x") && campoE.classList.contains("white")) 
+                {
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoE.appendChild(novaImg)
+                    adicionaClasses(campoE, "o")
+                }
+                else if (campoE.classList.contains("x") && campoI.classList.contains("x") && campoA.classList.contains("white")) 
+                {
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoA.appendChild(novaImg)
+                    adicionaClasses(campoA, "o")
+                }
+                else if (campoC.classList.contains("x") && campoE.classList.contains("x") && campoG.classList.contains("white")) 
+                {
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoG.appendChild(novaImg)
+                    adicionaClasses(campoG, "o")
+                }
+                else if (campoC.classList.contains("x") && campoG.classList.contains("x") && campoE.classList.contains("white")) 
+                {
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoE.appendChild(novaImg)
+                    adicionaClasses(campoE, "o")
+                }
+                else if (campoE.classList.contains("x") && campoG.classList.contains("x") && campoC.classList.contains("white")) 
+                {
+                    const novaImg = document.createElement("span")
+                    novaImg.innerHTML = `radio_button_unchecked` // ícone o
+                    novaImg.classList.add("material-icons-outlined")
+                    campoC.appendChild(novaImg)
+                    adicionaClasses(campoC, "o")
+                }
+                else 
+                {
+                    fazerJogadaAleatoria()
+                }
+                jogador = 1 //inverte a cor que aparecerá no campo de jogo
+                destacaJogador()
+                verificarVitoria()
 
-            // }
-            // else if (dificil)
+            }
+            // else if (nivelDificuldade == "dificil")
             // {
 
             // }
