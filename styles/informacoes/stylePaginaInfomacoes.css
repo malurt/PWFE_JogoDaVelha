@@ -114,16 +114,16 @@ footer
     {
         width: 100%;
         /* flex-grow: 1; */
-        height: 60vh;
+        height: 90vh;
     }
     .bloco-informacao h2
     {
-        font-size: 1.9rem;
+        font-size: 2rem;
     }
 
     .bloco-informacao p
     {
-        font-size: 0.8rem;
+        font-size: 1em;
     }
     header
     {
