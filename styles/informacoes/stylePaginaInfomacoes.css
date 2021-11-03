@@ -1,6 +1,137 @@
+body
+{
+    /* background-color: rgb(160, 241, 135); */
+    min-width: 100vw;
+    max-width: 100%;
+
+    min-height: 100vh;
+    max-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: 'Mali', cursive;
+}
+
 header
 {
+    /* background-color: powderblue; */
+    width: 100%;
+    height: 150px;
+
+    /* background-image: url(../../src/imgs/onda-header.png); */
+    background-image: url(../../src/imgs/ondas/jogo/onda-header.png);
+    background-size:cover;
+    background-position: center top; 
+}
+
+main
+{
+    /* background-color: rgb(139, 113, 173); */
+
     width: 100vw;
-    height: 100vh;
-    background-color: red;
+    display: flex;
+    flex-grow: 1;
+}
+
+.conteiner-blocos-informacao
+{
+    /* background-color: aqua; */
+
+    width: 100%;
+    flex-grow: 1;
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+
+}
+.bloco-informacao
+{
+    /* background-color: burlywood; */
+
+    height: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    padding: 20px;
+
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(9, 122, 170, 0.53);
+}
+
+.bloco-informacao h2
+{
+    color: #097AAA;
+
+    width: 100%;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.bloco-informacao p
+{
+    font-size: 1.2rem;
+
+    width: 100%;
+    text-align: justify;
+}
+
+footer
+{
+    /* background-color: rgb(240, 150, 210); */
+    width: 100%;
+    height: 75px; /* 75px */
+
+    background-image: url(../../src/imgs/ondas/jogo/onda-footer.png);
+    background-size:cover;
+    background-position: center top; 
+}
+
+
+
+@media (max-width: 1326px)
+{
+    header
+    {
+        height: 90px;
+    }
+
+    footer
+    {
+        height: 70px;
+    }
+
+    .conteiner-blocos-informacao
+    {
+        flex-direction: column;
+    }
+
+    .bloco-informacao
+    {
+        width: 100%;
+        flex-grow: 1;
+    }
+    .bloco-informacao h2
+    {
+        font-size: 1.9rem;
+    }
+
+    .bloco-informacao p
+    {
+        font-size: 0.8rem;
+    }
+    header
+    {
+        height: 90px;
+    }
+
+    footer
+    {
+        height: 70px;
+    }
+
 }
