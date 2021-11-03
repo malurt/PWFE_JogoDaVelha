@@ -113,7 +113,8 @@ footer
     .bloco-informacao
     {
         width: 100%;
-        flex-grow: 1;
+        /* flex-grow: 1; */
+        height: 85vh;
     }
     .bloco-informacao h2
     {
