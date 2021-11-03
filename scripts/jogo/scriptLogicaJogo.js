@@ -12,7 +12,7 @@ var nivelDificuldade = ""
 //FUNCOES
 
     //esconder modal de modos de jogo
-        const esconderModal = () => document.getElementById("conteiner-modal-modos-jogo").style.display = "none"
+        const esconderModal = (modal) => document.querySelector(`.${modal}`).style.display = "none"
     
     //pegar elemento pelo ID
         const pegarElementoPeloId = (idElemento) => document.getElementById(idElemento)
@@ -138,7 +138,7 @@ var nivelDificuldade = ""
             }
             else
             {
-                novaImg.innerHTML =  `close` // ícone o
+                novaImg.innerHTML =  `close` // ícone x
             }
             novaImg.classList.add("material-icons-outlined")
             campoReceptor.appendChild(novaImg)
@@ -425,13 +425,18 @@ var nivelDificuldade = ""
             elemento.classList.add(classe)
         }
 
+    //exibir modal de vitória
+        const exibirModal = () => document.getElementById("conteiner-vitoria").style.display = "flex"
+
     //verifica se alguem venceu com a jogada feita
         const verificarVitoria = () =>
         {
+            const divVitoria = pegarElementoPeloId("vitoria")
             //primeira coluna da esquerda pra direita AZUL -> vitoria do jogador 1
             if (campoA.classList.contains("x") && campoD.classList.contains("x") && campoG.classList.contains("x"))
             {
-                alert("jogador 1 venceu!!!")
+                exibirModal()
+                implementaIconeJogadaNoCampo(divVitoria, "x")
                 jogador = 0
                 return true
             }
@@ -439,7 +444,8 @@ var nivelDificuldade = ""
             //primeira coluna da esquerda pra direita VEMELHA -> vitoria do jogador 2
             else if (campoA.classList.contains("o") && campoD.classList.contains("o") && campoG.classList.contains("o") )
             {
-                alert("jogador 2 venceu!!!")
+                exibirModal()
+                implementaIconeJogadaNoCampo(divVitoria, "o")
                 jogador = 0
                 return true
             }
@@ -447,7 +453,8 @@ var nivelDificuldade = ""
             //segunda coluna da esquerda pra direita (meio) AZUL - > vitoria jogador 1
             else if(campoB.classList.contains("x") && campoE.classList.contains("x") && campoH.classList.contains("x"))
             {
-                alert("jogador 1 venceu!!!")
+                exibirModal()
+                implementaIconeJogadaNoCampo(divVitoria, "x")
                 jogador = 0
                 return true
             }
@@ -455,7 +462,8 @@ var nivelDificuldade = ""
             //segunda coluna da esquerda pra direita (meio) VERMELHA - > vitoria jogador 2
             else if(campoB.classList.contains("o") && campoE.classList.contains("o") && campoH.classList.contains("o"))
             {
-                alert("jogador 2 venceu!!!")
+                exibirModal()
+                implementaIconeJogadaNoCampo(divVitoria, "o")
                 jogador = 0
                 return true
             }
@@ -463,7 +471,8 @@ var nivelDificuldade = ""
             //terceira coluna da esquerda pra direita AZUL - > vitoria jogador 1
             else if(campoC.classList.contains("x") && campoF.classList.contains("x") && campoI.classList.contains("x"))
             {
-                alert("jogador 1 venceu!!!")
+                exibirModal()
+                implementaIconeJogadaNoCampo(divVitoria, "x")
                 jogador = 0
                 return true
             }
@@ -471,7 +480,8 @@ var nivelDificuldade = ""
             //terceira coluna da esquerda pra direita VERMELHO - > vitoria jogador 2
             else if(campoC.classList.contains("o") && campoF.classList.contains("o") && campoI.classList.contains("o"))
             {
-                alert("jogador 2 venceu!!!")
+                exibirModal()
+                implementaIconeJogadaNoCampo(divVitoria, "o")
                 jogador = 0
                 return true
             }
@@ -479,7 +489,8 @@ var nivelDificuldade = ""
             //primeira linha de cima para baixo AZUL - > vitoria jogador 1
             else if(campoA.classList.contains("x") && campoB.classList.contains("x") && campoC.classList.contains("x"))
             {
-                alert("jogador 1 venceu!!!")
+                exibirModal()
+                implementaIconeJogadaNoCampo(divVitoria, "x")
                 jogador = 0
                 return true
             }
@@ -487,7 +498,8 @@ var nivelDificuldade = ""
             //primeira linha de cima para baixo VERMELHA - > vitoria jogador 2
             else if(campoA.classList.contains("o") && campoB.classList.contains("o") && campoC.classList.contains("o"))
             {
-                alert("jogador 2 venceu!!!")
+                exibirModal()
+                implementaIconeJogadaNoCampo(divVitoria, "o")
                 jogador = 0
                 return true
             }
@@ -495,7 +507,8 @@ var nivelDificuldade = ""
             //segunda linha de cima para baixo AZUL - > vitoria jogador 1
             else if(campoD.classList.contains("x") && campoE.classList.contains("x") && campoF.classList.contains("x"))
             {
-                alert("jogador 1 venceu!!!")
+                exibirModal()
+                implementaIconeJogadaNoCampo(divVitoria, "x")
                 jogador = 0
                 return true
             }
@@ -503,7 +516,8 @@ var nivelDificuldade = ""
             //segunda linha de cima para baixo VERMELHA - > vitoria jogador 2
             else if(campoD.classList.contains("o") && campoE.classList.contains("o") && campoF.classList.contains("o"))
             {
-                alert("jogador 2 venceu!!!")
+                exibirModal()
+                implementaIconeJogadaNoCampo(divVitoria, "o")
                 jogador = 0
                 return true
             }
@@ -511,7 +525,8 @@ var nivelDificuldade = ""
             //terceira linha de cima para baixo AZUL - > vitoria jogador 1
             else if(campoG.classList.contains("x") && campoH.classList.contains("x") && campoI.classList.contains("x"))
             {
-                alert("jogador 1 venceu!!!")
+                exibirModal()
+                implementaIconeJogadaNoCampo(divVitoria, "x")
                 jogador = 0
                 return true
             }
@@ -519,7 +534,8 @@ var nivelDificuldade = ""
             //terceira linha de cima para baixo VERMELHA - > vitoria jogador 2
             else if(campoG.classList.contains("o") && campoH.classList.contains("o") && campoI.classList.contains("o"))
             {
-                alert("jogador 2 venceu!!!")
+                exibirModal()
+                implementaIconeJogadaNoCampo(divVitoria, "o")
                 jogador = 0
                 return true
             }
@@ -527,7 +543,8 @@ var nivelDificuldade = ""
             //diagonal esquerda pra direita AZUL - > vitoria jogador 1
             else if(campoA.classList.contains("x") && campoE.classList.contains("x") && campoI.classList.contains("x"))
             {
-                alert("jogador 1 venceu!!!")
+                exibirModal()
+                implementaIconeJogadaNoCampo(divVitoria, "x")
                 jogador = 0
                 return true
             }
@@ -535,7 +552,8 @@ var nivelDificuldade = ""
             //diagonal esquerda pra direita VEMELHO - > vitoria jogador 2
             else if(campoA.classList.contains("o") && campoE.classList.contains("o") && campoI.classList.contains("o"))
             {
-                alert("jogador 2 venceu!!!")
+                exibirModal()
+                implementaIconeJogadaNoCampo(divVitoria, "o")
                 jogador = 0
                 return true
             }
@@ -543,7 +561,8 @@ var nivelDificuldade = ""
             //diagonal direita pra esquerda AZUL - > vitoria jogador 1
             else if(campoC.classList.contains("x") && campoE.classList.contains("x") && campoG.classList.contains("x"))
             {
-                alert("jogador 1 venceu!!!")
+                exibirModal()
+                implementaIconeJogadaNoCampo(divVitoria, "x")
                 jogador = 0
                 return true
             }
@@ -551,7 +570,8 @@ var nivelDificuldade = ""
             //diagonal direita pra esquerda VERMELHA - > vitoria jogador 1
             else if(campoC.classList.contains("o") && campoE.classList.contains("o") && campoG.classList.contains("o"))
             {
-                alert("jogador 2 venceu!!!")
+                exibirModal()
+                implementaIconeJogadaNoCampo(divVitoria, "o")
                 jogador = 0
                 return true
                 return true

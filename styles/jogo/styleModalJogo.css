@@ -12,6 +12,17 @@
     gap: 150px;
 }
 
+#dificuldade-jogo {
+    background-color: transparent;
+    width: 30%;
+    height: 5%;
+    border: 2px solid  #0085DE;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    color: #006fb9;
+}
+
 .conteiner-modo {
     display: flex;
     flex-direction: column;
@@ -23,6 +34,10 @@
     gap: 20px;
     border-radius: 20px;
     border: 2px solid #EFF24C;
+}
+
+.vitoria span {
+    margin-bottom: 30px;
 }
 
 .conteiner-modo img {
@@ -42,7 +57,7 @@
     color: #8B8B88;
 }
 
-.conteiner-modo button {
+.button {
     width: 50%;
     height: 12%;
     border-radius: 10px;
@@ -54,6 +69,14 @@
     text-decoration: none;
     text-align: center;
     color: white;
+}
+
+.jogarNovamente {
+    font-size: 30px;
+}
+
+.mudarModoJogo {
+    font-size: 25px;
 }
 
 button:hover {

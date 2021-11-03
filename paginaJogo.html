@@ -34,7 +34,7 @@
     </header>
 
     <main>
-        <div class="conteiner-modal-modos-jogo" id="conteiner-modal-modos-jogo">
+        <div class="conteiner-modal-modos-jogo modalModos" id="conteiner-modal-modos-jogo">
 
             <div class="conteiner-modo">
                 <img src="src/imgs/computer-figma.png" alt="computer-modal">
@@ -47,17 +47,29 @@
                     <option value="dificil">Difícil</option>
                 </select>
 
-                <button onclick="esconderModal()" id="botaoJogarMaquina">Jogar</button>
+                <button onclick="esconderModal('modalModos')" class="button jogarMaquina" id="botaoJogarMaquina">Jogar</button>
             </div>
 
             <div class="conteiner-modo">
                 <img src="src/imgs/people-figma.png" alt="people-modal">
                 <h1>1x1</h1>
                 <p>Escolha um oponente e o chame para o desafio</p>
-                <button onclick="esconderModal()" id="botaoJogarPlayer">Jogar</button>
+                <button onclick="esconderModal('modalModos')" class="button jogarPlayer" id="botaoJogarPlayer">Jogar</button>
             </div>
             
         </div>
+
+
+        <div class="conteiner-modal-modos-jogo modalVitoria" id="conteiner-vitoria" style="display: none;">
+            <div class="conteiner-modo vitoria">
+                <h1>Vitória do</h1>
+                <div id="vitoria"></div>
+                <button onclick="esconderModal('modalVitoria')" class="button jogarNovamente">Jogar Novamente</button>
+                <button class="button mudarModoJogo">Mudar Modo de Jogo</button>
+            </div>
+        </div>
+       
+
         <div class="conteiner-botoes-acao"> <!-- Escondendo o menu ao clicar em jogar -->
 
             <div class="conteiner-menu">
