@@ -39,7 +39,7 @@ main
     /* background-color: aqua; */
 
     width: 100%;
-    flex-grow: 1;
+    flex-grow: 100%;
     padding: 25px;
     display: flex;
     flex-direction: row;
