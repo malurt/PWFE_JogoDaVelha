@@ -22,6 +22,7 @@ var nivelDificuldade = ""
         {
             const nomeJogador1 =  document.getElementById("nome-usuario1")
             const nomeJogador2 =  document.getElementById("nome-usuario2")
+            const nomeMaquina =  document.getElementById("nome-maquina")
             
             if(jogador == 1)
             {
@@ -30,6 +31,10 @@ var nivelDificuldade = ""
                if(nomeJogador2.classList.contains("destacado"))
                {
                    nomeJogador2.classList.remove("destacado")
+               }
+               if(nomeMaquina.classList.contains("destacado"))
+               {
+                    nomeMaquina.classList.remove("destacado")
                }
             }
             else if (jogador == 2)
@@ -603,6 +608,13 @@ var nivelDificuldade = ""
         {
            const campos = document.getElementsByClassName("campo-hash")
            console.log(campos)
+           
+           const iconeModalVitoria = document.getElementById("vitoria")
+
+           if(iconeModalVitoria.firstChild)
+           {
+               iconeModalVitoria.removeChild(iconeModalVitoria.firstChild)
+           }
 
            const arrCampos = Array.from(campos)
            arrCampos.forEach(campo => 
@@ -615,7 +627,6 @@ var nivelDificuldade = ""
                if (campo.classList.contains("x"))
                {
                     removeClasse(campo, "x")
-                    
                }
                else if (campo.classList.contains("o"))
                {
@@ -623,16 +634,18 @@ var nivelDificuldade = ""
                }
             })
 
-                jogador = 1
-                jogada = 1
-                destacaJogador()   
+            jogador = 1
+            jogada = 1
+            destacaJogador()
+             
         }
 
         const definirTipoJogo = (modoJogo) =>
         {
-            esconderModal()
+            esconderModal("modalModos")
             if(modoJogo == "player-maquina")
             {
+                console.log("oi")
                 mudarOponente()
                 tipoJogo = "player-maquina"
                 definirDificuldadeJogo("dificuldade-jogo")
@@ -670,6 +683,7 @@ var nivelDificuldade = ""
         //necessita de finalização
         const avisarJogadores = () => true
 
+        const redirecionarJogador = () => window.location.href = "paginaJogo.html";
 //EVENTOS 
 
     //Clique no campo A
@@ -719,3 +733,13 @@ var nivelDificuldade = ""
     //Clique no botão de jogar contra player
         const botaoJogarContraPlayer = pegarElementoPeloId("botaoJogarPlayer")
         botaoJogarContraPlayer.addEventListener("click", function(){definirTipoJogo("player-player")})
+
+    //Clique no botão para jogar novamente
+        const botaoJogarNovamente = pegarElementoPeloId("botaoJogarNovamente")
+        botaoJogarNovamente.addEventListener("click", reiniciarJogo)  
+
+    //Clique no botão para mudar modo jogo
+        const botaoMudarModoJogo= pegarElementoPeloId("botaoMudarModoJogo")
+        botaoMudarModoJogo.addEventListener("click", redirecionarJogador)  
+
+
