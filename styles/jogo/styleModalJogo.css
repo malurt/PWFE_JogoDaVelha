@@ -37,7 +37,7 @@
 }
 
 .vitoria span {
-    margin-bottom: 30px;
+    margin-bottom: 10%;
 }
 
 .conteiner-modo img {
@@ -71,12 +71,17 @@
     color: white;
 }
 
+.vitoria button {
+    width: 65%;
+    height: 15%;
+}
+
 .jogarNovamente {
-    font-size: 30px;
+    font-size: clamp(.1em, 1em + .5vw, 2em);
 }
 
 .mudarModoJogo {
-    font-size: 25px;
+    font-size: clamp(.1em, .9em + .5vw, 1.7em);
 }
 
 button:hover {

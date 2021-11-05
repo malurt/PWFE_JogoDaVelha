@@ -46,6 +46,24 @@ var nivelDificuldade = ""
                    nomeJogador1.classList.remove("destacado")
                }
             }
+            // else if (jogador == 2 && tipoJogo == "player-player")
+            // {
+            //     nomeJogador2.classList.add("destacado")
+               
+            //    if(nomeJogador1.classList.contains("destacado"))
+            //    {
+            //        nomeJogador1.classList.remove("destacado")
+            //    }
+            // }
+            // else if (jogador == 2 && tipoJogo == "player-maquina")
+            // {
+            //     nomeMaquina.classList.add("destacado")
+               
+            //    if(nomeJogador1.classList.contains("destacado"))
+            //    {
+            //        nomeJogador1.classList.remove("destacado")
+            //    }
+            // }
 
             else
             {
@@ -158,7 +176,7 @@ var nivelDificuldade = ""
 
             if(nivelDificuldade == "facil")
             {  
-                fazerJogadaAleatoria(possibilidadesJogadaMaquina)      
+                fazerJogadaAleatoria(possibilidadesJogadaMaquina) 
             }
             else if (nivelDificuldade == "medio")
             {
@@ -192,6 +210,7 @@ var nivelDificuldade = ""
                 {  
                     fazerJogadaAleatoria(possibilidadesJogadaMaquina)
                 }
+
             }
             else if (nivelDificuldade == "dificil")
             {                
@@ -330,7 +349,7 @@ var nivelDificuldade = ""
                     }
                     
                 }
-                
+
             }
             jogador = 1 //inverte a cor que aparecerá no campo de jogo
             jogada = jogada+1 
