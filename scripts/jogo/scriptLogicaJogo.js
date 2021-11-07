@@ -26,6 +26,7 @@ var nivelDificuldade = ""
             
             if(jogador == 1)
             {
+                console.log("entrou aqui no 1")
                nomeJogador1.classList.add("destacado")
 
                if(nomeJogador2.classList.contains("destacado"))
@@ -41,6 +42,16 @@ var nivelDificuldade = ""
             {
                 nomeJogador2.classList.add("destacado")
                
+               if(nomeJogador1.classList.contains("destacado"))
+               {
+                   nomeJogador1.classList.remove("destacado")
+               }
+            }
+            else if (jogador == 3)
+            {
+                nomeMaquina.classList.add("destacado")
+                console.log("chamou a função de destacar")
+                console.log(nomeMaquina)
                if(nomeJogador1.classList.contains("destacado"))
                {
                    nomeJogador1.classList.remove("destacado")
@@ -67,11 +78,16 @@ var nivelDificuldade = ""
 
             else
             {
+                console.log("opa, entrou aqui")
                 if(nomeJogador2.classList.contains("destacado"))
                {
                    nomeJogador2.classList.remove("destacado")
                }
                else if(nomeJogador1.classList.contains("destacado"))
+               {
+                   nomeJogador1.classList.remove("destacado")
+               }
+               else if(nomeMaquina.classList.contains("destacado"))
                {
                    nomeJogador1.classList.remove("destacado")
                }
@@ -91,7 +107,6 @@ var nivelDificuldade = ""
                     {
                         jogada = jogada+1
                         definirProximoJogador()
-                        destacaJogador()
                     }
                     
                 }
@@ -432,8 +447,10 @@ var nivelDificuldade = ""
         {
             if(tipoJogo == "player-maquina")
             {
-                console.log("Chamando a jogada da máquina no definir proximo jogador")
-                setTimeout(fazerJogadaMaquina, 1000)
+                // console.log("Chamando a jogada da máquina no definir proximo jogador")
+                jogador = 3
+                destacaJogador()
+                setTimeout(fazerJogadaMaquina, 2000)
                 jogador = 1;
             }
             else
